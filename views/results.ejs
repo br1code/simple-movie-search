@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Results for : <%= search %></h1>
+    <a href="/">
+        <h2>Search again</h2>
+    </a>
+
+    <% movies.forEach(m => { %>
+        <h2><%= m.Title %></h2>
+        <p>Year : <%= m.Year %></p>
+        <img src=<%= m.Poster %>>
+    <% }) %>
+
+</body>
+</html>
