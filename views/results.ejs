@@ -5,19 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Results for : <%= search %></h1>
-    <a href="/">
-        <h2>Search again</h2>
-    </a>
 
-    <% movies.forEach(m => { %>
-        <h2><%= m.Title %></h2>
-        <p>Year : <%= m.Year %></p>
-        <img src=<%= m.Poster %>>
-    <% }) %>
+    <div class="ui main text container segment" id="container">
 
+        <div class="ui huge header">
+                Results for : <%= search %>
+        </div>
+
+        <a href="/">Search Again</a>
+
+        <div class="ui divided items">
+            <% movies.forEach(m => { %>
+                <div class="item">
+                    <div class="image">
+                        <img src=<%= m.Poster %>>
+                    </div>
+                    <div class="content">
+                        <a class="header">
+                            <%= m.Title %>
+                        </a>
+                        <div class="meta">
+                            <span><%= m.Year %></span>
+                        </div>
+                        <div class="description">
+                            <p>Synopsis of the movie</p>
+                        </div>
+                        <div class="extra">
+                            Additional Details
+                        </div>
+                    </div>
+                </div> <!-- end item -->
+            <% }) %>
+        </div> <!-- end items -->
+
+    </div>
 </body>
 </html>
