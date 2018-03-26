@@ -25,24 +25,26 @@
 
         <div class="ui divided items">
             <% movies.forEach(m => { %>
-                <div class="item">
-                    <div class="image">
-                        <img src="<%= m.Poster %>" onerror="this.src='/img/posterError.jpg'">
-                    </div>
-                    <div class="content" style="margin-top: 10%;">
-                        <a class="header" href="/show/<%= m.imdbID %>">
-                            <%= m.Title %>
-                        </a>
-                        <div class="meta">
-                            <span><%= m.Year %></span>
+                <a href="/show/<%= m.imdbID %>">
+                    <div class="item">
+                        <div class="image">
+                            <img src="<%= m.Poster %>" onerror="this.src='/img/posterError.jpg'">
                         </div>
-                        <div class="description">
-                            <a href="/show/<%= m.imdbID %>/<%= search %>">
-                                <p>Show more details</p>
+                        <div class="content" style="margin-top: 10%;">
+                            <a class="header" href="/show/<%= m.imdbID %>">
+                                <%= m.Title %>
                             </a>
+                            <div class="meta">
+                                <span><%= m.Year %></span>
+                            </div>
+                            <div class="description">
+                                <a href="/show/<%= m.imdbID %>">
+                                    <p>Show more details</p>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </div> <!-- end item -->
+                    </div> <!-- end item -->
+                </a>
             <% }) %>
         </div> <!-- end items -->
 
