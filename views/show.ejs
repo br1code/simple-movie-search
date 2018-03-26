@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= movie.Title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="ui raised very padded text container segment" style="margin-top: 4.0em;">
+
+        <h1 class="huge header"><%= movie.Title %></h1>
+
+        <img class="ui medium centered image" src="<%= movie.Poster %>" alt="Movie Poster" onerror="this.src='http://craftandgraft.co/wp-content/uploads/2017/04/404PosterNotFound.jpg'">
+
+        <div class="ui list">
+            <div class="item">
+                <i class="calendar icon"></i>
+                <div class="content">Year: <%= movie.Year %></div>
+            </div>
+            <div class="item">
+                    <i class="film icon"></i>
+                    <div class="content">Genre: <%= movie.Genre %></div>
+            </div>
+            <div class="item">
+                    <i class="id card outline icon"></i>
+                    <div class="content">Director: <%= movie.Director %></div>
+            </div>
+        </div>
+
+        <div class="ui segment">
+            <p><%= movie.Plot %></p>
+        </div>
+        <button class="ui left floated labeled icon basic button" onclick="history.back()">
+            <i class="angle left icon"></i>
+            Back
+        </button>
+        <a href="/">
+            <button class="ui right floated labeled icon basic button">
+                <i class="search icon"></i>
+                Search
+            </button>
+        </a>
+    </div>
+    
+</body>
+</html>

@@ -30,6 +30,19 @@ app.get("/results", (req, res) => {
     });
 });
 
+app.get("/show/:id", (req, res) => {
+    let movieId = req.params.id;
+    let url = `http://www.omdbapi.com/?apikey=thewdb&i=${movieId}&plot=full`;
+    request(url, (error, response, body) => {
+        let data = JSON.parse(body);
+        if (!data.Error && response.statusCode === 200) {
+            res.render("show", {movie: data});
+        } else {
+            res.redirect("/");
+        }
+    })
+});
+
 
 app.listen(port, () => {
     console.log(`Server listening at port ${port}`);
